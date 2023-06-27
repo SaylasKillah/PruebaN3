@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{% static 'Imagenes/LOGO.JPG' %}" />
+    <title>Grupo Cero</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-4" style="background: linear-gradient(120deg, #2980b9, #8e44ad);">
+            <form class="formulario" id="formulario_contacto">
+                <!--Formulario-->
+               <h1> Contactate con Nosotros</h1>
+               <h3> Escribenos y en breve te responderemos</h3>
+               <label for="nombre">Nombres</label>
+               <input type="text" name="nombre" id="nombre" placeholder="Ingrese sus dos nombres" required> 
+               <label for="apellidopa">Primer Apellido</label>
+               <input type="text" name="apellidopa" id="apellidopa" placeholder="Apellido Paterno" required>
+               <label for="apellidoma">Segundo Apellido</label>
+               <input type="text" name="apellidoma" id="apellidoma" placeholder="Apellido Materno" required >
+               <label for="rut">Rut</label>
+               <input type="text" name="rut" id="rut" placeholder="Ingrese su rut" required>
+               <label for="direccion">Direccion</label>
+               <input type="text" name="direccion" id="direccion" placeholder="Ingrese su direccion" required>
+               <label for="email">Email</label>
+               <input type="text" name="email" id="email" placeholder="Ingrese su correo" required>
+               <label for="Telefono">Telefono</label>
+               <input type="text" name="telefono"  id="telefono" placeholder="Numero de Telefono" required>
+               <label for="genero">Seleccione Género</label>
+               <select class="genero" name="genero" id="genero" style="width: 415px;" >
+                   <option hidden selected>Selecciona una opción</option>
+                   <option value="2"> Masculino</option>
+                   <option value="3"> Femenino</option>
+                   <option value="4"> Otro</option>
+               </select>
+               <h4>Comentanos</h4>
+               <div class="comentario"> <!--CAJA DE COMENTARIO-->
+               <textarea name="caja" id="caja" rows="8" cols="50" placeholder="Sugerencia/Queja?"></textarea required>
+               </div>
+               <div class="boton"> <!--Boton enviar-->
+                   <input class="textoboton" id="enviar" type="submit" value="Enviar" onclick="window.alert('Gracias por Contactarnos');">
+               </div>
+           </form>
+           </div>
+    </div>
+    <!--Pie de pagina-->
+    <footer class="piepagina">
+        <div class="grupo1">
+          <div class="box">
+            <figure>
+              <a href="{% url 'index' %}">
+                <img src="{% static 'Imagenes/LOGO.JPG' %}" alt="Logo Grupo Cero">
+              </a>
+            </figure>
+          </div>
+          <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Pequeña Pyme dedicada a la exhibicion de orfebreria y pinturas</p>
+            <p>Para mayor informacion contactate con nosotros</p>
+          </div>
+          <div class="box">
+            <h2>SIGUENOS</h2>
+            <div class="redsocial">
+              <a href="https://es-la.facebook.com" target="_blank" class="fa fa-facebook"></a>
+              <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+              <a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a>
+              <a href="https://www.reddit.com" target="_blank" class="fa fa-reddit"></a>
+              <a href="https://www.youtube.com" target="_blank" class="fa fa-youtube"></a>
+            </div>
+          </div>
+        </div>
+        <div class="grupo2">
+          <small>&copy; 2023 <b>Grupo Cero</b> - Todos los Derechos Reservados.</small>
+        </div>
+      </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="{% static 'js/traducciones.js' %}"></script>
+    <script src="{% static 'js/formulario_jquery.js' %}"></script>
+    
+</body>
+</html>
+{% endblock %}
